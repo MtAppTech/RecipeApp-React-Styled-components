@@ -1,16 +1,15 @@
-import React from "react";
-import { Hamburger, Logo, Menu, MenuLink, Nav } from "./NavbarStyles";
+import React from 'react'
+import {  Hamburger, Logo, Menu, MenuLink, Nav } from './NavbarStyles'
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
+import { useState } from 'react';
 const Navbar = () => {
-  const [acik, setAcik] = useState(false);
+
+  
 
   return (
     <Nav>
-    
-      <Logo>
+      <Logo to="/home">
         <i>{"<Clarusway/>"} </i>
-        {/* tag lere özel < işaretlerini string gibi kullanmak istersek üstteki syntax la yazarız */}
         <span>recipe</span>
       </Logo>
 
@@ -19,14 +18,12 @@ const Navbar = () => {
       </Hamburger>
 
       <Menu>
-        <MenuLink>About</MenuLink>
-
-        <a href="https://github.com">Github</a>
-
-        <MenuLink>Logout</MenuLink>
+        <MenuLink to="/about"> about</MenuLink>
+        <a href="https://github.com/" target='blank'>github</a>
+        <MenuLink to="/">logout</MenuLink>
       </Menu>
     </Nav>
   );
-};
+}
 
-export default Navbar;
+export default Navbar

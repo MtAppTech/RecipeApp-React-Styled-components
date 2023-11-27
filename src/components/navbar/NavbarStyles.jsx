@@ -52,8 +52,8 @@ export const Menu = styled.div`
   /* içinde bulunduğu div in  stillerine göre ayarla kendini, bunu yazmazsak food app in altında kalacak */
   /* 3 kelime  açılınca üstteki özelliklerde olsun*/
   @media (max-width: 768px) {
-     overflow: hidden; 
-   /* display: none; */
+    overflow: hidden;
+    /* display: none; */
     /* tamamen gizler, hamburger tıklanınca bile açılmaz, o yüzden hidden kullandık */
     /* uzun yazı olurda taşarsa gizle (hamburgere dönüşünce)*/
     flex-direction: column;
@@ -61,16 +61,15 @@ export const Menu = styled.div`
     width: 100%;
     /* height:200px; */
     /* props olarak, osman=true geldi mesela */
-     /* max-height: ${({ osman }) => (osman ? "300px" : "0")};  */
+    /* max-height: ${({ osman }) => (osman ? "300px" : "0")};  */
 
-     /*  alttaki gibi de kontrol edebiliriz . Menu div i display flex ve flex-direction column old için alt altalar*/
-   display: ${({osman})=>(osman ? "flex" : "none" )}
+    /*  alttaki gibi de kontrol edebiliriz . Menu div i display flex ve flex-direction column old için alt altalar*/
 
     /* max-height:300px; */
     /* 3 çizgiye ilk tıklandığında 300 px açılsın, sonraki tıklamada kapansın */
     /* max-height:300px yazarsak hep açık olur */
   }
-/* export const Mlink=styled.a */
+  /* export const Mlink=styled.a */
   a {
     padding: 1rem 2rem;
     cursor: pointer;
@@ -107,7 +106,7 @@ export const Logo = styled(MenuLink)`
     /* font-family: "Girassol", sans-serif; */
   }
   span {
-    /* font-family: "Girassol", sans-serif; */
+    //font-family: "Girassol", sans-serif;
     font-weight: 400;
     /* font-size: 2rem; */
     color: #00adb5;
@@ -117,12 +116,10 @@ export const Logo = styled(MenuLink)`
 export const Hamburger = styled.div`
   display: none;
   /* Bir öğeyi gizleme özelliği  Öğe gizlenecek ve sayfa, öğe orada değilmiş gibi alttaki stiller yok gibi görüntülenecektir: hamburger ekran büyükken görünmesin 768 den küçülmeye başlayınca görünsün*/
-  
+
   cursor: pointer;
-  
-@media (max-width: 768px) {
-display: flex;
 
-}
-
+  @media (max-width: 768px) {
+    display: flex;
+  }
 `;
