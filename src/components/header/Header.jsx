@@ -10,15 +10,19 @@ import {
 
 
 const Header = ({setQuery, setMeal , getData}) => {
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    getData()
+  }
 
   return (
     <HeaderContainer>
       <MainHeader>FOOD APP</MainHeader>
-      <FormContainer >
+      <FormContainer onSubmit={handleSubmit} >
         <FoodInput
           type="text"
           placeholder="Search"
-         
+          onChange={(e)=> setQuery(e.target.value)}
         />
         <Button type="submit">Search</Button>
 
