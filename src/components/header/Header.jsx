@@ -9,7 +9,7 @@ import {
 } from "./HeaderStyles";
 
 
-const Header = () => {
+const Header = ({setQuery, setMeal , getData}) => {
 
   return (
     <HeaderContainer>
@@ -23,8 +23,8 @@ const Header = () => {
         <Button type="submit">Search</Button>
 
         <Select
-          name="ögünTypes"
-          id="ögünTypes"
+          name="mealTypes"
+          id="mealTypes"
         >
           <option>Breakfast</option>
           <option>Lunch</option>

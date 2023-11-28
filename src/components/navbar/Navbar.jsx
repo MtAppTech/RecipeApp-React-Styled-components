@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <Nav>
       <Logo to="/home">
-        <i>{"<Clarusway/>"} </i>
+        <a>{"<Clarusway/>"} </a>
         <span>recipe</span>
       </Logo>
 

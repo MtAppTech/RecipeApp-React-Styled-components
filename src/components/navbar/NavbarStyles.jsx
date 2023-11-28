@@ -116,7 +116,6 @@ export const Logo = styled(MenuLink)`
 export const Hamburger = styled.div`
   display: none;
   /* Bir öğeyi gizleme özelliği  Öğe gizlenecek ve sayfa, öğe orada değilmiş gibi alttaki stiller yok gibi görüntülenecektir: hamburger ekran büyükken görünmesin 768 den küçülmeye başlayınca görünsün*/
-
   cursor: pointer;
 
   @media (max-width: 768px) {
