@@ -16,8 +16,9 @@ const Home = () => {
   const url=`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`
   console.log(url)
   const getData=async()=>{
-    const veri = await axios.get(url)
-    console.log(veri.data.hits)
+    const {data} = await axios.get(url)
+    console.log(data.hits)
+    setRecipes(data.hits)
 
   }
   //getData()
@@ -26,9 +27,9 @@ const Home = () => {
     <div>
       <Header setQuery={setQuery} setMeal={setMeal} getData={getData} />
 
-      {[].length > 0 ? (
+      {recipes.length > 0 ? (
         <div>
-          <RecipeCard />
+          <RecipeCard recipes={recipes}/>
         </div>
       ) : (
         <ImgDiv>

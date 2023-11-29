@@ -10,8 +10,11 @@ import {
 } from "./DetailsStyles";
 import dietsvg from "../../assets/diet.svg";
 const Details = () => {
- const a="merhaba"
+ 
+const {state:{a}}=useLocation()
+console.log(a);
   return (
+    
     <DetailContainer>
       <HeaderContainer>
         <h1>{a.recipe.label}</h1>
