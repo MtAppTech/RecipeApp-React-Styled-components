@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Button,
   Cards,
@@ -6,11 +6,14 @@ import {
   RecipeHeader,
   RecipeImage,
 } from "./HomeStyles";
-import {  useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
+import { RecipeContext } from "../../App";
 
-const RecipeCard = ({ recipes }) => {
-  console.log(recipes);
-  const navigate= useNavigate()
+// const RecipeCard = ({recipes}) => {
+const RecipeCard = () => {
+  const { recipes } = useContext(RecipeContext);
+  //console.log(recipes);
+  const navigate = useNavigate();
 
   return (
     <MainContainer>
@@ -18,9 +21,9 @@ const RecipeCard = ({ recipes }) => {
         <Cards key={a.recipe.calories}>
           <RecipeHeader>{a.recipe.label}</RecipeHeader>
           <RecipeImage src={a.recipe.image} />
-          <Button
-          onClick={()=>navigate("/details" , {state:{a}})}
-          >Details</Button>
+          <Button onClick={() => navigate("/details", { state: { a } })}>
+            Details
+          </Button>
         </Cards>
       ))}
     </MainContainer>

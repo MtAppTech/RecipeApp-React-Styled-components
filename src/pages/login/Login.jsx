@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   FormContainer,
   Header,
@@ -10,11 +10,13 @@ import {
 } from "./LoginStyles";
 import mealSvg from "../../assets/meal.svg";
 import { useNavigate } from "react-router-dom";
+import { RecipeContext } from "../../App";
 
 const Login = () => {
   const navigate= useNavigate()
-  const [name, setName] = useState("");
-  const [pass, setPass] = useState("");
+  const{name, pass, setName, setPass}= useContext(RecipeContext)
+  //const [name, setName] = useState("");
+  //const [pass, setPass] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault()
