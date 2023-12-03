@@ -61,7 +61,9 @@ export const Menu = styled.div`
     width: 100%;
     /* height:200px; */
     /* props olarak, osman=true geldi mesela */
-    /* max-height: ${({ osman }) => (osman ? "300px" : "0")};  */
+    /*max-height: ${({ navBarState }) => (navBarState ? "300px" : "0")}; */
+
+    display: ${({navBarState}) => (navBarState ? "flex" : "none")}
 
     /*  alttaki gibi de kontrol edebiliriz . Menu div i display flex ve flex-direction column old için alt altalar*/
 
