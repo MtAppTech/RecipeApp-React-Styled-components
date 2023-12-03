@@ -1,10 +1,9 @@
-import React from 'react'
-import {  Hamburger, Logo, Menu, MenuLink, Nav } from './NavbarStyles'
+import React from "react";
+import { Hamburger, Logo, Menu, MenuLink, Nav } from "./NavbarStyles";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from 'react';
+import { useState } from "react";
 const Navbar = () => {
-
-  
+  const [navbarVisible, setNavBarVisible] = useState(false);
 
   return (
     <Nav>
@@ -13,17 +12,19 @@ const Navbar = () => {
         <span>recipe</span>
       </Logo>
 
-      <Hamburger>
+      <Hamburger onClick={() => setNavBarVisible(!navbarVisible)}>
         <GiHamburgerMenu />
       </Hamburger>
 
-      <Menu>
+      <Menu navBarState={navbarVisible} onClick={() => setNavBarVisible(false)}>
         <MenuLink to="/about"> about</MenuLink>
-        <a href="https://github.com/" target='blank'>github</a>
+        <a href="https://github.com/" target="blank">
+          github
+        </a>
         <MenuLink to="/">logout</MenuLink>
       </Menu>
     </Nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
